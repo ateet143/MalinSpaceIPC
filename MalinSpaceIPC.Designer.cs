@@ -50,14 +50,11 @@
             this.labelMass = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.connectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
             this.groupBoxTemp.SuspendLayout();
             this.groupBoxEventHorizon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -279,30 +276,11 @@
             this.buttonCalculate.UseMnemonic = false;
             this.buttonCalculate.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connectionStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1224, 22);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // connectionStatus
-            // 
-            this.connectionStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectionStatus.ForeColor = System.Drawing.Color.Red;
-            this.connectionStatus.Name = "connectionStatus";
-            this.connectionStatus.Size = new System.Drawing.Size(187, 17);
-            this.connectionStatus.Text = "Not Connected to The Server";
-            // 
             // MalinSpaceIPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 553);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.groupBoxEventHorizon);
             this.Controls.Add(this.groupBoxTemp);
@@ -322,10 +300,7 @@
             this.groupBoxEventHorizon.ResumeLayout(false);
             this.groupBoxEventHorizon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -353,8 +328,6 @@
         private System.Windows.Forms.ColumnHeader Temperature;
         private System.Windows.Forms.ColumnHeader EventHorizon;
         private System.Windows.Forms.Button buttonCalculate;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel connectionStatus;
     }
 }
 
