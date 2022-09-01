@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewCalculations = new System.Windows.Forms.ListView();
             this.StarVelocity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StarDistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,15 +40,15 @@
             this.textBoxObserve = new System.Windows.Forms.TextBox();
             this.groupBoxStarDistance = new System.Windows.Forms.GroupBox();
             this.labelArcAngle = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxArc = new System.Windows.Forms.TextBox();
             this.groupBoxTemp = new System.Windows.Forms.GroupBox();
             this.labelCelcius = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCelcius = new System.Windows.Forms.TextBox();
             this.groupBoxEventHorizon = new System.Windows.Forms.GroupBox();
             this.numericUpDownPower = new System.Windows.Forms.NumericUpDown();
             this.labelPower = new System.Windows.Forms.Label();
             this.labelMass = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxMass = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
@@ -57,21 +57,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewCalculations
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewCalculations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.StarVelocity,
             this.StarDistance,
             this.Temperature,
             this.EventHorizon});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(484, 95);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(715, 405);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewCalculations.HideSelection = false;
+            this.listViewCalculations.Location = new System.Drawing.Point(484, 95);
+            this.listViewCalculations.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewCalculations.Name = "listViewCalculations";
+            this.listViewCalculations.Size = new System.Drawing.Size(715, 405);
+            this.listViewCalculations.TabIndex = 0;
+            this.listViewCalculations.UseCompatibleStateImageBehavior = false;
+            this.listViewCalculations.View = System.Windows.Forms.View.Details;
             // 
             // StarVelocity
             // 
@@ -150,7 +150,7 @@
             // groupBoxStarDistance
             // 
             this.groupBoxStarDistance.Controls.Add(this.labelArcAngle);
-            this.groupBoxStarDistance.Controls.Add(this.textBox2);
+            this.groupBoxStarDistance.Controls.Add(this.textBoxArc);
             this.groupBoxStarDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxStarDistance.Location = new System.Drawing.Point(18, 153);
             this.groupBoxStarDistance.Margin = new System.Windows.Forms.Padding(4);
@@ -172,18 +172,18 @@
             this.labelArcAngle.TabIndex = 2;
             this.labelArcAngle.Text = "Arc Angle";
             // 
-            // textBox2
+            // textBoxArc
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 32);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 22);
-            this.textBox2.TabIndex = 2;
+            this.textBoxArc.Location = new System.Drawing.Point(165, 32);
+            this.textBoxArc.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxArc.Name = "textBoxArc";
+            this.textBoxArc.Size = new System.Drawing.Size(148, 22);
+            this.textBoxArc.TabIndex = 2;
             // 
             // groupBoxTemp
             // 
             this.groupBoxTemp.Controls.Add(this.labelCelcius);
-            this.groupBoxTemp.Controls.Add(this.textBox1);
+            this.groupBoxTemp.Controls.Add(this.textBoxCelcius);
             this.groupBoxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxTemp.Location = new System.Drawing.Point(18, 249);
             this.groupBoxTemp.Margin = new System.Windows.Forms.Padding(4);
@@ -205,20 +205,20 @@
             this.labelCelcius.TabIndex = 2;
             this.labelCelcius.Text = "Celcius";
             // 
-            // textBox1
+            // textBoxCelcius
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxCelcius.Location = new System.Drawing.Point(165, 32);
+            this.textBoxCelcius.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCelcius.Name = "textBoxCelcius";
+            this.textBoxCelcius.Size = new System.Drawing.Size(148, 22);
+            this.textBoxCelcius.TabIndex = 2;
             // 
             // groupBoxEventHorizon
             // 
             this.groupBoxEventHorizon.Controls.Add(this.numericUpDownPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelMass);
-            this.groupBoxEventHorizon.Controls.Add(this.textBox3);
+            this.groupBoxEventHorizon.Controls.Add(this.textBoxMass);
             this.groupBoxEventHorizon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEventHorizon.Location = new System.Drawing.Point(18, 340);
             this.groupBoxEventHorizon.Margin = new System.Windows.Forms.Padding(4);
@@ -258,13 +258,13 @@
             this.labelMass.TabIndex = 2;
             this.labelMass.Text = "Mass";
             // 
-            // textBox3
+            // textBoxMass
             // 
-            this.textBox3.Location = new System.Drawing.Point(165, 36);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 22);
-            this.textBox3.TabIndex = 2;
+            this.textBoxMass.Location = new System.Drawing.Point(165, 36);
+            this.textBoxMass.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMass.Name = "textBoxMass";
+            this.textBoxMass.Size = new System.Drawing.Size(133, 22);
+            this.textBoxMass.TabIndex = 2;
             // 
             // buttonCalculate
             // 
@@ -275,6 +275,7 @@
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseMnemonic = false;
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // MalinSpaceIPC
             // 
@@ -286,7 +287,7 @@
             this.Controls.Add(this.groupBoxTemp);
             this.Controls.Add(this.groupBoxStarDistance);
             this.Controls.Add(this.groupBoxStarVelocity);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewCalculations);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MalinSpaceIPC";
@@ -306,7 +307,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewCalculations;
         private System.Windows.Forms.GroupBox groupBoxStarVelocity;
         private System.Windows.Forms.TextBox textBoxRest;
         private System.Windows.Forms.Label labelRest;
@@ -314,15 +315,15 @@
         private System.Windows.Forms.TextBox textBoxObserve;
         private System.Windows.Forms.GroupBox groupBoxStarDistance;
         private System.Windows.Forms.Label labelArcAngle;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxArc;
         private System.Windows.Forms.GroupBox groupBoxTemp;
         private System.Windows.Forms.Label labelCelcius;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCelcius;
         private System.Windows.Forms.GroupBox groupBoxEventHorizon;
         private System.Windows.Forms.NumericUpDown numericUpDownPower;
         private System.Windows.Forms.Label labelPower;
         private System.Windows.Forms.Label labelMass;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxMass;
         private System.Windows.Forms.ColumnHeader StarVelocity;
         private System.Windows.Forms.ColumnHeader StarDistance;
         private System.Windows.Forms.ColumnHeader Temperature;
