@@ -116,6 +116,7 @@
             this.textBoxRest.Name = "textBoxRest";
             this.textBoxRest.Size = new System.Drawing.Size(148, 22);
             this.textBoxRest.TabIndex = 4;
+            this.textBoxRest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRest_KeyPress);
             // 
             // labelRest
             // 
@@ -146,6 +147,7 @@
             this.textBoxObserve.Name = "textBoxObserve";
             this.textBoxObserve.Size = new System.Drawing.Size(148, 22);
             this.textBoxObserve.TabIndex = 2;
+            this.textBoxObserve.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxObserve_KeyPress);
             // 
             // groupBoxStarDistance
             // 
@@ -179,6 +181,7 @@
             this.textBoxArc.Name = "textBoxArc";
             this.textBoxArc.Size = new System.Drawing.Size(148, 22);
             this.textBoxArc.TabIndex = 2;
+            this.textBoxArc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxArc_KeyPress);
             // 
             // groupBoxTemp
             // 
@@ -212,6 +215,7 @@
             this.textBoxCelcius.Name = "textBoxCelcius";
             this.textBoxCelcius.Size = new System.Drawing.Size(148, 22);
             this.textBoxCelcius.TabIndex = 2;
+            this.textBoxCelcius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCelcius_KeyPress);
             // 
             // groupBoxEventHorizon
             // 
@@ -265,6 +269,7 @@
             this.textBoxMass.Name = "textBoxMass";
             this.textBoxMass.Size = new System.Drawing.Size(133, 22);
             this.textBoxMass.TabIndex = 2;
+            this.textBoxMass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMass_KeyPress);
             // 
             // buttonCalculate
             // 

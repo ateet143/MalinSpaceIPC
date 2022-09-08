@@ -20,66 +20,156 @@ namespace MalinSpaceIPC
             InitializeComponent();
         }
 
+        /// When the user click the calculate button this block executes.
+        /// Step1. Client is connected to the server by the address, if not connected then catch block executes.
+        /// Step2. When there is input in any of the textbox then the corresponding calculation is done.
+        /// <param name="sender">Sendere is the calucate button</param>
+        /// <param name="e">a parameter called e that contains the event data</param>
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            listViewCalculations.Items.Clear(); 
-            string[] test = new string[4];
-           
-            using (ChannelFactory<IAstroContract> pipeFactory = new ChannelFactory<IAstroContract>(
-                    new NetNamedPipeBinding(),
-                      new EndpointAddress("net.pipe://localhost/PipeReverse"))
-)
+            //listViewCalculations.Items.Clear();
+            string[] display = new string[4];
+            try
             {
-                IAstroContract pipeProxy = pipeFactory.CreateChannel();
-
-                if (!string.IsNullOrEmpty(textBoxObserve.Text) && !string.IsNullOrEmpty(textBoxRest.Text))
+                using (ChannelFactory<IAstroContract> pipeFactory = new ChannelFactory<IAstroContract>(
+                   new NetNamedPipeBinding(),
+                     new EndpointAddress("net.pipe://localhost/PipeReverse"))
+)
                 {
-                    double ob = Double.Parse(textBoxObserve.Text);
-                    double rt = Double.Parse(textBoxRest.Text);
-                    double result = pipeProxy.starVelocity(ob, rt);
-
-                    MessageBox.Show("star Velocity" + result.ToString());
-                    test[0] = result.ToString();
+                    IAstroContract pipeProxy = pipeFactory.CreateChannel();
                     
-                    
+
+                    if (!string.IsNullOrEmpty(textBoxObserve.Text) && !string.IsNullOrEmpty(textBoxRest.Text))
+                    {
+                        try
+                        {
+                            double ob = Double.Parse(textBoxObserve.Text);
+                            double rt = Double.Parse(textBoxRest.Text);
+                            double result = pipeProxy.starVelocity(ob, rt);
+                            display[0] = result.ToString();
+                        }
+                        //if connection is not connected then executes this block
+                        catch (EndpointNotFoundException)
+                        {
+                            MessageBox.Show("Server Connection fault: Check the address/connection");
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(textBoxArc.Text))
+                    {
+                        try
+                        {
+                            double arc = Double.Parse(textBoxArc.Text);
+                            double result = pipeProxy.starDistance(arc);
+                            display[1] = result.ToString();
+                        }
+                        catch (EndpointNotFoundException)
+                        {
+                            MessageBox.Show("Server Connection fault: Check the address/connection");
+                        }
+                    }
+
+
+                    if (!string.IsNullOrEmpty(textBoxCelcius.Text))
+                    {
+                        try
+                        {
+                            double temp = Double.Parse(textBoxCelcius.Text);
+                            double result = pipeProxy.celciusToKelvin(temp);
+                            display[2] = result.ToString();
+                        }
+                        catch (EndpointNotFoundException)
+                        {
+                            MessageBox.Show("Server Connection fault: Check the address/connection");
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(textBoxMass.Text))
+                    {
+                        try
+                        {
+                            double mass = Double.Parse(textBoxMass.Text);
+                            double eventHorizonResult = pipeProxy.eventHorizon(mass * Math.Pow(10, (double)numericUpDownPower.Value));
+                            string result = String.Format(CultureInfo.InvariantCulture,  "{0:0.#E+0}", eventHorizonResult);
+                            display[3] = result;
+                        }
+                        catch (EndpointNotFoundException)
+                        {
+                            MessageBox.Show("Server Connection fault: Check the address/connection");
+                        }
+
+                    }
+                    ListViewItem itm = new ListViewItem(display);
+                    listViewCalculations.Items.Add(itm);
+                    allTextBoxClear();
                 }
-
-                if (!string.IsNullOrEmpty(textBoxArc.Text))
-                {
-                    double arc = Double.Parse(textBoxArc.Text);
-                    double result = pipeProxy.starDistance(arc);
-
-                    MessageBox.Show("star Distance" + result.ToString());
-                    test[1] = result.ToString();
-                }
-
-
-                if (!string.IsNullOrEmpty(textBoxCelcius.Text))
-                {
-                    double temp = Double.Parse(textBoxCelcius.Text);
-                    double result = pipeProxy.celciusToKelvin(temp);
-
-                    MessageBox.Show("temp in K " + result.ToString());
-                    test[2] = result.ToString();
-
-                }
-
-                if (!string.IsNullOrEmpty(textBoxMass.Text))
-                {
-                    double mass = Double.Parse(textBoxMass.Text);
-                    double result = pipeProxy.eventHorizon(mass * Math.Pow(10,(double)numericUpDownPower.Value));
-                    MessageBox.Show("Event Horizon" + result.ToString("0.#E+0", CultureInfo.InvariantCulture));
-                    test[3] = result.ToString();
-
-                }
-                ListViewItem itm = new ListViewItem(test);
-                listViewCalculations.Items.Add(itm);
-
-
             }
-
+            catch (CommunicationObjectFaultedException)
+            {
+                return;
+            }
         }
 
-       
+        private void textBoxObserve_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            keyPressMethod((sender as TextBox), e);
+        }
+
+        private void textBoxRest_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyPressMethod((sender as TextBox), e);
+        }
+
+        private void textBoxArc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyPressMethod((sender as TextBox), e);
+        }
+
+        private void textBoxCelcius_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyPressMethod((sender as TextBox), e);
+        }
+
+        private void textBoxMass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyPressMethod((sender as TextBox), e);
+        }
+
+        /// Method to execute the keypress event
+        /// it will prevent the user to type other than digit ,control, decimal and - (for negative number)
+        /// Second block allow aonly one decimal.
+        /// Third block allows only - once
+        /// <param name="textBoxPress">it is for the TextBox object</param>
+        /// <param name="e">e contains event data which is char pressed by the user</param>
+        private void keyPressMethod(TextBox textBoxPress, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.' && textBoxPress.Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+
+            //only allow - once 
+            if (e.KeyChar == '-' && textBoxPress.Text.Length > 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void allTextBoxClear()
+        {
+            textBoxObserve.Clear();
+            textBoxRest.Clear();
+            textBoxArc.Clear();
+            textBoxMass.Clear();
+            textBoxCelcius.Clear();
+        }
     }
 }
