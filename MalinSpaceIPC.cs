@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace MalinSpaceIPC
         {
             InitializeComponent();
         }
-
+       
         /// When the user click the calculate button this block executes.
         /// Step1. Client is connected to the server by the address, if not connected then catch block executes.
         /// Step2. When there is input in any of the textbox then the corresponding calculation is done.
@@ -171,5 +172,70 @@ namespace MalinSpaceIPC
             textBoxMass.Clear();
             textBoxCelcius.Clear();
         }
+
+
+        private void dayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTheme(Color.LightBlue, Color.MidnightBlue);
+        }
+
+        private void nightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTheme(Color.FromArgb(46,46,46), Color.White);
+        }
+
+        public void ChangeTheme(Color backColor, Color foreColor)
+        {
+            this.BackColor = backColor;
+            this.ForeColor = foreColor;
+            
+            foreach (var button in Controls.OfType<Button>())
+            {
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderColor = Color.SlateBlue;
+                button.BackColor = ControlPaint.Dark(backColor, 50.0f);
+                button.ForeColor = foreColor;
+            }
+
+            foreach (var group in Controls.OfType<GroupBox>())
+            {
+                group.ForeColor = foreColor;
+                group.BackColor = backColor;
+            }
+
+            foreach(var menu in Controls.OfType<MenuStrip>())
+            {
+                menu.BackColor = backColor;
+                menu.ForeColor = foreColor;
+            }
+
+            foreach (var listView in Controls.OfType<ListView>())
+            {
+                listView.ForeColor = foreColor;
+                listView.Columns[0].ListView.ForeColor = foreColor;
+                //listViewCalculations.Columns[0].Text
+            }
+        }
+
+        private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog();
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+              
+                ChangeTheme(colorDlg.Color, this.ForeColor);
+            }
+        }
+
+        private void foregroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDlg = new ColorDialog();
+            if (colorDlg.ShowDialog() == DialogResult.OK)
+            {
+                ChangeTheme(this.BackColor, colorDlg.Color);
+            }
+        }
+
+      
     }
 }

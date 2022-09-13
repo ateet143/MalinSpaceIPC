@@ -50,11 +50,20 @@
             this.labelMass = new System.Windows.Forms.Label();
             this.textBoxMass = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.foregroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
             this.groupBoxTemp.SuspendLayout();
             this.groupBoxEventHorizon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewCalculations
@@ -64,6 +73,7 @@
             this.StarDistance,
             this.Temperature,
             this.EventHorizon});
+            this.listViewCalculations.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listViewCalculations.HideSelection = false;
             this.listViewCalculations.Location = new System.Drawing.Point(484, 95);
             this.listViewCalculations.Margin = new System.Windows.Forms.Padding(4);
@@ -273,6 +283,7 @@
             // 
             // buttonCalculate
             // 
+            this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalculate.Location = new System.Drawing.Point(117, 458);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(179, 32);
@@ -281,6 +292,73 @@
             this.buttonCalculate.UseMnemonic = false;
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(527, 9);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(124, 25);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeToolStripMenuItem,
+            this.colourToolStripMenuItem});
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
+            this.fileToolStripMenuItem.Text = "Theme Settings";
+            // 
+            // themeToolStripMenuItem
+            // 
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dayToolStripMenuItem,
+            this.nightToolStripMenuItem});
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.themeToolStripMenuItem.Text = "Theme";
+            // 
+            // dayToolStripMenuItem
+            // 
+            this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
+            this.dayToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.dayToolStripMenuItem.Text = "Day";
+            this.dayToolStripMenuItem.Click += new System.EventHandler(this.dayToolStripMenuItem_Click);
+            // 
+            // nightToolStripMenuItem
+            // 
+            this.nightToolStripMenuItem.Name = "nightToolStripMenuItem";
+            this.nightToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.nightToolStripMenuItem.Text = "Night";
+            this.nightToolStripMenuItem.Click += new System.EventHandler(this.nightToolStripMenuItem_Click);
+            // 
+            // colourToolStripMenuItem
+            // 
+            this.colourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundToolStripMenuItem,
+            this.foregroundToolStripMenuItem});
+            this.colourToolStripMenuItem.Name = "colourToolStripMenuItem";
+            this.colourToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.colourToolStripMenuItem.Text = "Colour";
+            // 
+            // backgroundToolStripMenuItem
+            // 
+            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.backgroundToolStripMenuItem.Text = "Background";
+            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
+            // 
+            // foregroundToolStripMenuItem
+            // 
+            this.foregroundToolStripMenuItem.Name = "foregroundToolStripMenuItem";
+            this.foregroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.foregroundToolStripMenuItem.Text = "Foreground";
+            this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.foregroundToolStripMenuItem_Click);
             // 
             // MalinSpaceIPC
             // 
@@ -293,6 +371,7 @@
             this.Controls.Add(this.groupBoxStarDistance);
             this.Controls.Add(this.groupBoxStarVelocity);
             this.Controls.Add(this.listViewCalculations);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MalinSpaceIPC";
@@ -306,7 +385,10 @@
             this.groupBoxEventHorizon.ResumeLayout(false);
             this.groupBoxEventHorizon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -334,6 +416,14 @@
         private System.Windows.Forms.ColumnHeader Temperature;
         private System.Windows.Forms.ColumnHeader EventHorizon;
         private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem foregroundToolStripMenuItem;
     }
 }
 
