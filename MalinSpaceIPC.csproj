@@ -56,6 +56,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MalinSpaceIPC.de.resx">
+      <DependentUpon>MalinSpaceIPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MalinSpaceIPC.en-GB.resx">
+      <DependentUpon>MalinSpaceIPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MalinSpaceIPC.fr.resx">
+      <DependentUpon>MalinSpaceIPC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MalinSpaceIPC.resx">
       <DependentUpon>MalinSpaceIPC.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MalinSpaceIPC));
             this.listViewCalculations = new System.Windows.Forms.ListView();
             this.StarVelocity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StarDistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,16 +59,23 @@
             this.colourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.foregroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fRENCHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gERMANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxCountryFlag = new System.Windows.Forms.PictureBox();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
             this.groupBoxTemp.SuspendLayout();
             this.groupBoxEventHorizon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountryFlag)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewCalculations
             // 
+            resources.ApplyResources(this.listViewCalculations, "listViewCalculations");
             this.listViewCalculations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.StarVelocity,
             this.StarDistance,
@@ -75,296 +83,229 @@
             this.EventHorizon});
             this.listViewCalculations.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listViewCalculations.HideSelection = false;
-            this.listViewCalculations.Location = new System.Drawing.Point(484, 95);
-            this.listViewCalculations.Margin = new System.Windows.Forms.Padding(4);
             this.listViewCalculations.Name = "listViewCalculations";
-            this.listViewCalculations.Size = new System.Drawing.Size(715, 405);
-            this.listViewCalculations.TabIndex = 0;
             this.listViewCalculations.UseCompatibleStateImageBehavior = false;
             this.listViewCalculations.View = System.Windows.Forms.View.Details;
             // 
             // StarVelocity
             // 
-            this.StarVelocity.Text = "Star Velocity";
-            this.StarVelocity.Width = 174;
+            resources.ApplyResources(this.StarVelocity, "StarVelocity");
             // 
             // StarDistance
             // 
-            this.StarDistance.Text = "Star Distance";
-            this.StarDistance.Width = 208;
+            resources.ApplyResources(this.StarDistance, "StarDistance");
             // 
             // Temperature
             // 
-            this.Temperature.Text = "Temperature";
-            this.Temperature.Width = 113;
+            resources.ApplyResources(this.Temperature, "Temperature");
             // 
             // EventHorizon
             // 
-            this.EventHorizon.Text = "Event Horizon";
-            this.EventHorizon.Width = 196;
+            resources.ApplyResources(this.EventHorizon, "EventHorizon");
             // 
             // groupBoxStarVelocity
             // 
+            resources.ApplyResources(this.groupBoxStarVelocity, "groupBoxStarVelocity");
             this.groupBoxStarVelocity.Controls.Add(this.textBoxRest);
             this.groupBoxStarVelocity.Controls.Add(this.labelRest);
             this.groupBoxStarVelocity.Controls.Add(this.label1);
             this.groupBoxStarVelocity.Controls.Add(this.textBoxObserve);
-            this.groupBoxStarVelocity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxStarVelocity.Location = new System.Drawing.Point(18, 20);
-            this.groupBoxStarVelocity.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxStarVelocity.Name = "groupBoxStarVelocity";
-            this.groupBoxStarVelocity.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxStarVelocity.Size = new System.Drawing.Size(420, 111);
-            this.groupBoxStarVelocity.TabIndex = 1;
             this.groupBoxStarVelocity.TabStop = false;
-            this.groupBoxStarVelocity.Text = "Star Velocity";
             // 
             // textBoxRest
             // 
-            this.textBoxRest.Location = new System.Drawing.Point(165, 75);
-            this.textBoxRest.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.textBoxRest, "textBoxRest");
             this.textBoxRest.Name = "textBoxRest";
-            this.textBoxRest.Size = new System.Drawing.Size(148, 22);
-            this.textBoxRest.TabIndex = 4;
             this.textBoxRest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRest_KeyPress);
             // 
             // labelRest
             // 
-            this.labelRest.AutoSize = true;
-            this.labelRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRest.Location = new System.Drawing.Point(13, 75);
-            this.labelRest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.labelRest, "labelRest");
             this.labelRest.Name = "labelRest";
-            this.labelRest.Size = new System.Drawing.Size(33, 13);
-            this.labelRest.TabIndex = 3;
-            this.labelRest.Text = "Rest";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Observe";
             // 
             // textBoxObserve
             // 
-            this.textBoxObserve.Location = new System.Drawing.Point(165, 32);
-            this.textBoxObserve.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.textBoxObserve, "textBoxObserve");
             this.textBoxObserve.Name = "textBoxObserve";
-            this.textBoxObserve.Size = new System.Drawing.Size(148, 22);
-            this.textBoxObserve.TabIndex = 2;
             this.textBoxObserve.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxObserve_KeyPress);
             // 
             // groupBoxStarDistance
             // 
+            resources.ApplyResources(this.groupBoxStarDistance, "groupBoxStarDistance");
             this.groupBoxStarDistance.Controls.Add(this.labelArcAngle);
             this.groupBoxStarDistance.Controls.Add(this.textBoxArc);
-            this.groupBoxStarDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxStarDistance.Location = new System.Drawing.Point(18, 153);
-            this.groupBoxStarDistance.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxStarDistance.Name = "groupBoxStarDistance";
-            this.groupBoxStarDistance.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxStarDistance.Size = new System.Drawing.Size(420, 77);
-            this.groupBoxStarDistance.TabIndex = 5;
             this.groupBoxStarDistance.TabStop = false;
-            this.groupBoxStarDistance.Text = "Star Distance";
             // 
             // labelArcAngle
             // 
-            this.labelArcAngle.AutoSize = true;
-            this.labelArcAngle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelArcAngle.Location = new System.Drawing.Point(10, 32);
-            this.labelArcAngle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.labelArcAngle, "labelArcAngle");
             this.labelArcAngle.Name = "labelArcAngle";
-            this.labelArcAngle.Size = new System.Drawing.Size(62, 13);
-            this.labelArcAngle.TabIndex = 2;
-            this.labelArcAngle.Text = "Arc Angle";
             // 
             // textBoxArc
             // 
-            this.textBoxArc.Location = new System.Drawing.Point(165, 32);
-            this.textBoxArc.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.textBoxArc, "textBoxArc");
             this.textBoxArc.Name = "textBoxArc";
-            this.textBoxArc.Size = new System.Drawing.Size(148, 22);
-            this.textBoxArc.TabIndex = 2;
             this.textBoxArc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxArc_KeyPress);
             // 
             // groupBoxTemp
             // 
+            resources.ApplyResources(this.groupBoxTemp, "groupBoxTemp");
             this.groupBoxTemp.Controls.Add(this.labelCelcius);
             this.groupBoxTemp.Controls.Add(this.textBoxCelcius);
-            this.groupBoxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxTemp.Location = new System.Drawing.Point(18, 249);
-            this.groupBoxTemp.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxTemp.Name = "groupBoxTemp";
-            this.groupBoxTemp.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxTemp.Size = new System.Drawing.Size(420, 75);
-            this.groupBoxTemp.TabIndex = 6;
             this.groupBoxTemp.TabStop = false;
-            this.groupBoxTemp.Text = "Temperature";
             // 
             // labelCelcius
             // 
-            this.labelCelcius.AutoSize = true;
-            this.labelCelcius.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCelcius.Location = new System.Drawing.Point(10, 32);
-            this.labelCelcius.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.labelCelcius, "labelCelcius");
             this.labelCelcius.Name = "labelCelcius";
-            this.labelCelcius.Size = new System.Drawing.Size(48, 13);
-            this.labelCelcius.TabIndex = 2;
-            this.labelCelcius.Text = "Celcius";
             // 
             // textBoxCelcius
             // 
-            this.textBoxCelcius.Location = new System.Drawing.Point(165, 32);
-            this.textBoxCelcius.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.textBoxCelcius, "textBoxCelcius");
             this.textBoxCelcius.Name = "textBoxCelcius";
-            this.textBoxCelcius.Size = new System.Drawing.Size(148, 22);
-            this.textBoxCelcius.TabIndex = 2;
             this.textBoxCelcius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCelcius_KeyPress);
             // 
             // groupBoxEventHorizon
             // 
+            resources.ApplyResources(this.groupBoxEventHorizon, "groupBoxEventHorizon");
             this.groupBoxEventHorizon.Controls.Add(this.numericUpDownPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelMass);
             this.groupBoxEventHorizon.Controls.Add(this.textBoxMass);
-            this.groupBoxEventHorizon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxEventHorizon.Location = new System.Drawing.Point(18, 340);
-            this.groupBoxEventHorizon.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEventHorizon.Name = "groupBoxEventHorizon";
-            this.groupBoxEventHorizon.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxEventHorizon.Size = new System.Drawing.Size(420, 85);
-            this.groupBoxEventHorizon.TabIndex = 7;
             this.groupBoxEventHorizon.TabStop = false;
-            this.groupBoxEventHorizon.Text = "Event Horizon";
             // 
             // numericUpDownPower
             // 
-            this.numericUpDownPower.Location = new System.Drawing.Point(350, 36);
-            this.numericUpDownPower.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.numericUpDownPower, "numericUpDownPower");
             this.numericUpDownPower.Name = "numericUpDownPower";
-            this.numericUpDownPower.Size = new System.Drawing.Size(60, 22);
-            this.numericUpDownPower.TabIndex = 8;
             // 
             // labelPower
             // 
-            this.labelPower.AutoSize = true;
-            this.labelPower.Location = new System.Drawing.Point(302, 38);
-            this.labelPower.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.labelPower, "labelPower");
             this.labelPower.Name = "labelPower";
-            this.labelPower.Size = new System.Drawing.Size(34, 16);
-            this.labelPower.TabIndex = 8;
-            this.labelPower.Text = "x 10";
             // 
             // labelMass
             // 
-            this.labelMass.AutoSize = true;
-            this.labelMass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMass.Location = new System.Drawing.Point(10, 39);
-            this.labelMass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.labelMass, "labelMass");
             this.labelMass.Name = "labelMass";
-            this.labelMass.Size = new System.Drawing.Size(36, 13);
-            this.labelMass.TabIndex = 2;
-            this.labelMass.Text = "Mass";
             // 
             // textBoxMass
             // 
-            this.textBoxMass.Location = new System.Drawing.Point(165, 36);
-            this.textBoxMass.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.textBoxMass, "textBoxMass");
             this.textBoxMass.Name = "textBoxMass";
-            this.textBoxMass.Size = new System.Drawing.Size(133, 22);
-            this.textBoxMass.TabIndex = 2;
             this.textBoxMass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMass_KeyPress);
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalculate.Location = new System.Drawing.Point(117, 458);
+            resources.ApplyResources(this.buttonCalculate, "buttonCalculate");
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(179, 32);
-            this.buttonCalculate.TabIndex = 8;
-            this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseMnemonic = false;
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(527, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(124, 25);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.themeToolStripMenuItem,
-            this.colourToolStripMenuItem});
-            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colourToolStripMenuItem,
+            this.languageToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
-            this.fileToolStripMenuItem.Text = "Theme Settings";
             // 
             // themeToolStripMenuItem
             // 
+            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dayToolStripMenuItem,
             this.nightToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.themeToolStripMenuItem.Text = "Theme";
             // 
             // dayToolStripMenuItem
             // 
+            resources.ApplyResources(this.dayToolStripMenuItem, "dayToolStripMenuItem");
             this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-            this.dayToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.dayToolStripMenuItem.Text = "Day";
             this.dayToolStripMenuItem.Click += new System.EventHandler(this.dayToolStripMenuItem_Click);
             // 
             // nightToolStripMenuItem
             // 
+            resources.ApplyResources(this.nightToolStripMenuItem, "nightToolStripMenuItem");
             this.nightToolStripMenuItem.Name = "nightToolStripMenuItem";
-            this.nightToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.nightToolStripMenuItem.Text = "Night";
             this.nightToolStripMenuItem.Click += new System.EventHandler(this.nightToolStripMenuItem_Click);
             // 
             // colourToolStripMenuItem
             // 
+            resources.ApplyResources(this.colourToolStripMenuItem, "colourToolStripMenuItem");
             this.colourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backgroundToolStripMenuItem,
             this.foregroundToolStripMenuItem});
             this.colourToolStripMenuItem.Name = "colourToolStripMenuItem";
-            this.colourToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.colourToolStripMenuItem.Text = "Colour";
             // 
             // backgroundToolStripMenuItem
             // 
+            resources.ApplyResources(this.backgroundToolStripMenuItem, "backgroundToolStripMenuItem");
             this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.backgroundToolStripMenuItem.Text = "Background";
             this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
             // 
             // foregroundToolStripMenuItem
             // 
+            resources.ApplyResources(this.foregroundToolStripMenuItem, "foregroundToolStripMenuItem");
             this.foregroundToolStripMenuItem.Name = "foregroundToolStripMenuItem";
-            this.foregroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.foregroundToolStripMenuItem.Text = "Foreground";
             this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.foregroundToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eNGToolStripMenuItem,
+            this.fRENCHToolStripMenuItem,
+            this.gERMANToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            // 
+            // eNGToolStripMenuItem
+            // 
+            resources.ApplyResources(this.eNGToolStripMenuItem, "eNGToolStripMenuItem");
+            this.eNGToolStripMenuItem.Name = "eNGToolStripMenuItem";
+            this.eNGToolStripMenuItem.Click += new System.EventHandler(this.eNGToolStripMenuItem_Click);
+            // 
+            // fRENCHToolStripMenuItem
+            // 
+            resources.ApplyResources(this.fRENCHToolStripMenuItem, "fRENCHToolStripMenuItem");
+            this.fRENCHToolStripMenuItem.Name = "fRENCHToolStripMenuItem";
+            this.fRENCHToolStripMenuItem.Click += new System.EventHandler(this.fRENCHToolStripMenuItem_Click);
+            // 
+            // gERMANToolStripMenuItem
+            // 
+            resources.ApplyResources(this.gERMANToolStripMenuItem, "gERMANToolStripMenuItem");
+            this.gERMANToolStripMenuItem.Name = "gERMANToolStripMenuItem";
+            this.gERMANToolStripMenuItem.Click += new System.EventHandler(this.gERMANToolStripMenuItem_Click);
+            // 
+            // pictureBoxCountryFlag
+            // 
+            resources.ApplyResources(this.pictureBoxCountryFlag, "pictureBoxCountryFlag");
+            this.pictureBoxCountryFlag.Name = "pictureBoxCountryFlag";
+            this.pictureBoxCountryFlag.TabStop = false;
             // 
             // MalinSpaceIPC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 553);
+            this.Controls.Add(this.pictureBoxCountryFlag);
             this.Controls.Add(this.buttonCalculate);
             this.Controls.Add(this.groupBoxEventHorizon);
             this.Controls.Add(this.groupBoxTemp);
@@ -372,10 +313,7 @@
             this.Controls.Add(this.groupBoxStarVelocity);
             this.Controls.Add(this.listViewCalculations);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MalinSpaceIPC";
-            this.Text = "Malin Space IPC";
             this.groupBoxStarVelocity.ResumeLayout(false);
             this.groupBoxStarVelocity.PerformLayout();
             this.groupBoxStarDistance.ResumeLayout(false);
@@ -387,6 +325,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPower)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountryFlag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,6 +363,11 @@
         private System.Windows.Forms.ToolStripMenuItem colourToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem foregroundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eNGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fRENCHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gERMANToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBoxCountryFlag;
     }
 }
 

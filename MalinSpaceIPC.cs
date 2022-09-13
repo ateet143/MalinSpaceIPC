@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +21,7 @@ namespace MalinSpaceIPC
         {
             InitializeComponent();
         }
-       
+
         /// When the user click the calculate button this block executes.
         /// Step1. Client is connected to the server by the address, if not connected then catch block executes.
         /// Step2. When there is input in any of the textbox then the corresponding calculation is done.
@@ -28,7 +29,6 @@ namespace MalinSpaceIPC
         /// <param name="e">a parameter called e that contains the event data</param>
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            //listViewCalculations.Items.Clear();
             string[] display = new string[4];
             try
             {
@@ -38,7 +38,7 @@ namespace MalinSpaceIPC
 )
                 {
                     IAstroContract pipeProxy = pipeFactory.CreateChannel();
-                    
+
 
                     if (!string.IsNullOrEmpty(textBoxObserve.Text) && !string.IsNullOrEmpty(textBoxRest.Text))
                     {
@@ -91,7 +91,7 @@ namespace MalinSpaceIPC
                         {
                             double mass = Double.Parse(textBoxMass.Text);
                             double eventHorizonResult = pipeProxy.eventHorizon(mass * Math.Pow(10, (double)numericUpDownPower.Value));
-                            string result = String.Format(CultureInfo.InvariantCulture,  "{0:0.#E+0}", eventHorizonResult);
+                            string result = String.Format(CultureInfo.InvariantCulture, "{0:0.#E+0}", eventHorizonResult);
                             display[3] = result;
                         }
                         catch (EndpointNotFoundException)
@@ -163,7 +163,7 @@ namespace MalinSpaceIPC
             }
         }
 
-
+        //Clearing all the textbox in the application
         private void allTextBoxClear()
         {
             textBoxObserve.Clear();
@@ -174,25 +174,38 @@ namespace MalinSpaceIPC
         }
 
 
+        /// When the user choose the Day button under the Setting> Theme> Day Menu
+        /// This code executes with the background colour of LightBlue and forecolor of MidnightBlue
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dayToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeTheme(Color.LightBlue, Color.MidnightBlue);
         }
 
+        /// When the user choose the Day button under the Setting> Theme> Night Menu
+        /// This code executes with the background colour of ARGB(255,46,46,46) and forecolor of white
         private void nightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeTheme(Color.FromArgb(46,46,46), Color.White);
+            ChangeTheme(Color.FromArgb(46, 46, 46), Color.White);
         }
 
+
+
+        /// ChangeTheme method to change the Background and Foreground coloru
+        /// <param name="backColor">Represents the background colour for the application</param>
+        /// <param name="foreColor">Represents the foreground colour for the application</param>
         public void ChangeTheme(Color backColor, Color foreColor)
         {
             this.BackColor = backColor;
             this.ForeColor = foreColor;
-            
+
+            //For changing the button color and style
             foreach (var button in Controls.OfType<Button>())
             {
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderColor = Color.SlateBlue;
+                // this will darken the given backcolor, to help visible in the form
                 button.BackColor = ControlPaint.Dark(backColor, 50.0f);
                 button.ForeColor = foreColor;
             }
@@ -203,7 +216,7 @@ namespace MalinSpaceIPC
                 group.BackColor = backColor;
             }
 
-            foreach(var menu in Controls.OfType<MenuStrip>())
+            foreach (var menu in Controls.OfType<MenuStrip>())
             {
                 menu.BackColor = backColor;
                 menu.ForeColor = foreColor;
@@ -217,16 +230,25 @@ namespace MalinSpaceIPC
             }
         }
 
+
+        /// Execute the code when user chooses Settings > Colour > Background menu
+        /// It will open the colour dialog box and call the changeTheme method to change the background colour
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog colorDlg = new ColorDialog();
             if (colorDlg.ShowDialog() == DialogResult.OK)
             {
-              
+
                 ChangeTheme(colorDlg.Color, this.ForeColor);
             }
         }
 
+        /// Execute the code when user chooses Settings > Colour > Foreground menu
+        /// It will open the colour dialog box and call the changeTheme method to change the foreground colour
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void foregroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog colorDlg = new ColorDialog();
@@ -236,6 +258,60 @@ namespace MalinSpaceIPC
             }
         }
 
-      
+        
+        /// When the user chooses Setting > Language > English
+        /// ChangeLanguage method executes with English input.The language of the form is expected to changed to English(UK)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void eNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage("English");
+        }
+
+        /// When the user chooses Setting > Language > French
+        /// ChangeLanguage method executes with French input.The language of the form is expected to changed to French
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void fRENCHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage("French");
+        }
+
+        /// When the user chooses Setting > Language > German
+        /// ChangeLanguage method executes with German input.The language of the form is expected to changed to German
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void gERMANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage("German");
+        }
+
+        /// Method to change the UICulture of the form
+        /// The code help to change the language to English(UK), French and German 
+        /// <param name="language">Represents the language to be changed</param>
+        private void ChangeLanguage(string language)
+        {
+            switch (language)
+            {
+                case "English":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-GB");
+
+                    break;
+                case "French":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+                    // this.BackgroundImage = Properties.Resources.Flag_of_France;
+                    break;
+                case "German":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+                    //  this.BackgroundImage = Properties.Resources.Flag_of_Spain;
+                    break;
+            }
+            //Clear the previous Controls object configuration
+            Controls.Clear();
+            //re-Initialize every component according the language choosen.
+            InitializeComponent();
+        }
+
+
     }
 }
