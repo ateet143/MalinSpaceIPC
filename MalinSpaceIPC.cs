@@ -310,7 +310,7 @@ namespace MalinSpaceIPC
                     break;
             }
             //Clear the previous Controls object configuration
-           this.Controls.Clear();
+            Controls.Clear();
             
             //re-Initialize every component according the language choosen.
             InitializeComponent();
