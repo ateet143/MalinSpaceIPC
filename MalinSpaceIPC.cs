@@ -291,6 +291,9 @@ namespace MalinSpaceIPC
         /// <param name="language">Represents the language to be changed</param>
         private void ChangeLanguage(string language)
         {
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
+            
             switch (language)
             {
                 case "English":
@@ -307,7 +310,8 @@ namespace MalinSpaceIPC
                     break;
             }
             //Clear the previous Controls object configuration
-            Controls.Clear();
+           this.Controls.Clear();
+            
             //re-Initialize every component according the language choosen.
             InitializeComponent();
         }
