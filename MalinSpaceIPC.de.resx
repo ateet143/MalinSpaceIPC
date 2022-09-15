@@ -188,7 +188,7 @@
     <value>Nacht</value>
   </data>
   <data name="themeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="themeToolStripMenuItem.Text" xml:space="preserve">
     <value>Thema</value>
@@ -206,7 +206,7 @@
     <value>Vordergrund</value>
   </data>
   <data name="colourToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="colourToolStripMenuItem.Text" xml:space="preserve">
     <value>Farbe</value>
@@ -230,7 +230,7 @@
     <value>Deutsch</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Sprache</value>
@@ -246,10 +246,10 @@
   </data>
   <data name="pictureBoxCountryFlag.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwCAYAAACG5f33AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACUSURBVGhD7dCxDcNADATB7784d+BaXiqAAaFNh8AwuHDPe5dkHNkbR/bGkb1xZG8c2RtH9saR
-        vXFkbxzZG0f2xpG9cWRvHNkbR/bGka3/+/hOwEjASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMDo3N+5
-        fCdgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYCRgJGAkYHLuA0GDRKW6tD2YAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwCAYAAACG5f33AAAABGdBTUEAALGPC/xhBQAAAJRJREFUaEPt
+        0LENw0AMBMHvvzh34FpeKoABoU2HwDC4cM97l2Qc2RtH9saRvXFkbxzZG0f2xpG9cWRvHNkbR/bGkb1x
+        ZG8c2RtH9saRrf/7+E7ASMBIwEjASMBIwEjASMBIwEjASMBIwEjASMBIwOjc37l8J2AkYCRgJGAkYCRg
+        JGAkYCRgJGAkYCRgJGAkYCRgcu4DQYNEpbq0PZgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureBoxCountryFlag.Location" type="System.Drawing.Point, System.Drawing">

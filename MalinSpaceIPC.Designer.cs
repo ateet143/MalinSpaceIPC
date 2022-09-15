@@ -52,6 +52,7 @@
             this.textBoxMass = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pictureBoxCountryFlag = new System.Windows.Forms.PictureBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.eNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fRENCHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gERMANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxCountryFlag = new System.Windows.Forms.PictureBox();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
             this.groupBoxTemp.SuspendLayout();
@@ -75,7 +75,6 @@
             // 
             // listViewCalculations
             // 
-            resources.ApplyResources(this.listViewCalculations, "listViewCalculations");
             this.listViewCalculations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.StarVelocity,
             this.StarDistance,
@@ -83,6 +82,7 @@
             this.EventHorizon});
             this.listViewCalculations.ForeColor = System.Drawing.SystemColors.WindowText;
             this.listViewCalculations.HideSelection = false;
+            resources.ApplyResources(this.listViewCalculations, "listViewCalculations");
             this.listViewCalculations.Name = "listViewCalculations";
             this.listViewCalculations.UseCompatibleStateImageBehavior = false;
             this.listViewCalculations.View = System.Windows.Forms.View.Details;
@@ -105,11 +105,11 @@
             // 
             // groupBoxStarVelocity
             // 
-            resources.ApplyResources(this.groupBoxStarVelocity, "groupBoxStarVelocity");
             this.groupBoxStarVelocity.Controls.Add(this.textBoxRest);
             this.groupBoxStarVelocity.Controls.Add(this.labelRest);
             this.groupBoxStarVelocity.Controls.Add(this.label1);
             this.groupBoxStarVelocity.Controls.Add(this.textBoxObserve);
+            resources.ApplyResources(this.groupBoxStarVelocity, "groupBoxStarVelocity");
             this.groupBoxStarVelocity.Name = "groupBoxStarVelocity";
             this.groupBoxStarVelocity.TabStop = false;
             // 
@@ -137,9 +137,9 @@
             // 
             // groupBoxStarDistance
             // 
-            resources.ApplyResources(this.groupBoxStarDistance, "groupBoxStarDistance");
             this.groupBoxStarDistance.Controls.Add(this.labelArcAngle);
             this.groupBoxStarDistance.Controls.Add(this.textBoxArc);
+            resources.ApplyResources(this.groupBoxStarDistance, "groupBoxStarDistance");
             this.groupBoxStarDistance.Name = "groupBoxStarDistance";
             this.groupBoxStarDistance.TabStop = false;
             // 
@@ -156,9 +156,9 @@
             // 
             // groupBoxTemp
             // 
-            resources.ApplyResources(this.groupBoxTemp, "groupBoxTemp");
             this.groupBoxTemp.Controls.Add(this.labelCelcius);
             this.groupBoxTemp.Controls.Add(this.textBoxCelcius);
+            resources.ApplyResources(this.groupBoxTemp, "groupBoxTemp");
             this.groupBoxTemp.Name = "groupBoxTemp";
             this.groupBoxTemp.TabStop = false;
             // 
@@ -175,11 +175,11 @@
             // 
             // groupBoxEventHorizon
             // 
-            resources.ApplyResources(this.groupBoxEventHorizon, "groupBoxEventHorizon");
             this.groupBoxEventHorizon.Controls.Add(this.numericUpDownPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelPower);
             this.groupBoxEventHorizon.Controls.Add(this.labelMass);
             this.groupBoxEventHorizon.Controls.Add(this.textBoxMass);
+            resources.ApplyResources(this.groupBoxEventHorizon, "groupBoxEventHorizon");
             this.groupBoxEventHorizon.Name = "groupBoxEventHorizon";
             this.groupBoxEventHorizon.TabStop = false;
             // 
@@ -219,87 +219,93 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             // 
-            // fileToolStripMenuItem
-            // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.themeToolStripMenuItem,
-            this.colourToolStripMenuItem,
-            this.languageToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            // 
-            // themeToolStripMenuItem
-            // 
-            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
-            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dayToolStripMenuItem,
-            this.nightToolStripMenuItem});
-            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            // 
-            // dayToolStripMenuItem
-            // 
-            resources.ApplyResources(this.dayToolStripMenuItem, "dayToolStripMenuItem");
-            this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-            this.dayToolStripMenuItem.Click += new System.EventHandler(this.dayToolStripMenuItem_Click);
-            // 
-            // nightToolStripMenuItem
-            // 
-            resources.ApplyResources(this.nightToolStripMenuItem, "nightToolStripMenuItem");
-            this.nightToolStripMenuItem.Name = "nightToolStripMenuItem";
-            this.nightToolStripMenuItem.Click += new System.EventHandler(this.nightToolStripMenuItem_Click);
-            // 
-            // colourToolStripMenuItem
-            // 
-            resources.ApplyResources(this.colourToolStripMenuItem, "colourToolStripMenuItem");
-            this.colourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundToolStripMenuItem,
-            this.foregroundToolStripMenuItem});
-            this.colourToolStripMenuItem.Name = "colourToolStripMenuItem";
-            // 
-            // backgroundToolStripMenuItem
-            // 
-            resources.ApplyResources(this.backgroundToolStripMenuItem, "backgroundToolStripMenuItem");
-            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
-            // 
-            // foregroundToolStripMenuItem
-            // 
-            resources.ApplyResources(this.foregroundToolStripMenuItem, "foregroundToolStripMenuItem");
-            this.foregroundToolStripMenuItem.Name = "foregroundToolStripMenuItem";
-            this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.foregroundToolStripMenuItem_Click);
-            // 
-            // languageToolStripMenuItem
-            // 
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eNGToolStripMenuItem,
-            this.fRENCHToolStripMenuItem,
-            this.gERMANToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            // 
-            // eNGToolStripMenuItem
-            // 
-            resources.ApplyResources(this.eNGToolStripMenuItem, "eNGToolStripMenuItem");
-            this.eNGToolStripMenuItem.Name = "eNGToolStripMenuItem";
-            this.eNGToolStripMenuItem.Click += new System.EventHandler(this.eNGToolStripMenuItem_Click);
-            // 
-            // fRENCHToolStripMenuItem
-            // 
-            resources.ApplyResources(this.fRENCHToolStripMenuItem, "fRENCHToolStripMenuItem");
-            this.fRENCHToolStripMenuItem.Name = "fRENCHToolStripMenuItem";
-            this.fRENCHToolStripMenuItem.Click += new System.EventHandler(this.fRENCHToolStripMenuItem_Click);
-            // 
-            // gERMANToolStripMenuItem
-            // 
-            resources.ApplyResources(this.gERMANToolStripMenuItem, "gERMANToolStripMenuItem");
-            this.gERMANToolStripMenuItem.Name = "gERMANToolStripMenuItem";
-            this.gERMANToolStripMenuItem.Click += new System.EventHandler(this.gERMANToolStripMenuItem_Click);
-            // 
             // pictureBoxCountryFlag
             // 
             resources.ApplyResources(this.pictureBoxCountryFlag, "pictureBoxCountryFlag");
             this.pictureBoxCountryFlag.Name = "pictureBoxCountryFlag";
             this.pictureBoxCountryFlag.TabStop = false;
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeToolStripMenuItem,
+            this.colourToolStripMenuItem,
+            this.languageToolStripMenuItem});
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            this.fileToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.settings;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            // 
+            // themeToolStripMenuItem
+            // 
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dayToolStripMenuItem,
+            this.nightToolStripMenuItem});
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
+            // 
+            // dayToolStripMenuItem
+            // 
+            this.dayToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.sun;
+            this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
+            resources.ApplyResources(this.dayToolStripMenuItem, "dayToolStripMenuItem");
+            this.dayToolStripMenuItem.Click += new System.EventHandler(this.dayToolStripMenuItem_Click);
+            // 
+            // nightToolStripMenuItem
+            // 
+            this.nightToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.moon;
+            this.nightToolStripMenuItem.Name = "nightToolStripMenuItem";
+            resources.ApplyResources(this.nightToolStripMenuItem, "nightToolStripMenuItem");
+            this.nightToolStripMenuItem.Click += new System.EventHandler(this.nightToolStripMenuItem_Click);
+            // 
+            // colourToolStripMenuItem
+            // 
+            this.colourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundToolStripMenuItem,
+            this.foregroundToolStripMenuItem});
+            this.colourToolStripMenuItem.Name = "colourToolStripMenuItem";
+            resources.ApplyResources(this.colourToolStripMenuItem, "colourToolStripMenuItem");
+            // 
+            // backgroundToolStripMenuItem
+            // 
+            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
+            resources.ApplyResources(this.backgroundToolStripMenuItem, "backgroundToolStripMenuItem");
+            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
+            // 
+            // foregroundToolStripMenuItem
+            // 
+            this.foregroundToolStripMenuItem.Name = "foregroundToolStripMenuItem";
+            resources.ApplyResources(this.foregroundToolStripMenuItem, "foregroundToolStripMenuItem");
+            this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.foregroundToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eNGToolStripMenuItem,
+            this.fRENCHToolStripMenuItem,
+            this.gERMANToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // eNGToolStripMenuItem
+            // 
+            this.eNGToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.gb_eng;
+            this.eNGToolStripMenuItem.Name = "eNGToolStripMenuItem";
+            resources.ApplyResources(this.eNGToolStripMenuItem, "eNGToolStripMenuItem");
+            this.eNGToolStripMenuItem.Click += new System.EventHandler(this.eNGToolStripMenuItem_Click);
+            // 
+            // fRENCHToolStripMenuItem
+            // 
+            this.fRENCHToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.fr;
+            this.fRENCHToolStripMenuItem.Name = "fRENCHToolStripMenuItem";
+            resources.ApplyResources(this.fRENCHToolStripMenuItem, "fRENCHToolStripMenuItem");
+            this.fRENCHToolStripMenuItem.Click += new System.EventHandler(this.fRENCHToolStripMenuItem_Click);
+            // 
+            // gERMANToolStripMenuItem
+            // 
+            this.gERMANToolStripMenuItem.Image = global::MalinSpaceIPC.Properties.Resources.de;
+            this.gERMANToolStripMenuItem.Name = "gERMANToolStripMenuItem";
+            resources.ApplyResources(this.gERMANToolStripMenuItem, "gERMANToolStripMenuItem");
+            this.gERMANToolStripMenuItem.Click += new System.EventHandler(this.gERMANToolStripMenuItem_Click);
             // 
             // MalinSpaceIPC
             // 
@@ -314,6 +320,8 @@
             this.Controls.Add(this.listViewCalculations);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MalinSpaceIPC";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MalinSpaceIPC_FormClosing);
+            this.Load += new System.EventHandler(this.MalinSpaceIPC_Load);
             this.groupBoxStarVelocity.ResumeLayout(false);
             this.groupBoxStarVelocity.PerformLayout();
             this.groupBoxStarDistance.ResumeLayout(false);

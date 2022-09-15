@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MalinSpaceIPC.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -314,8 +315,18 @@ namespace MalinSpaceIPC
             
             //re-Initialize every component according the language choosen.
             InitializeComponent();
+            Properties.Settings.Default.Save();
         }
 
+        private void MalinSpaceIPC_FormClosing(object sender, FormClosingEventArgs e)
+        {
 
+           
+        }
+
+        private void MalinSpaceIPC_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
