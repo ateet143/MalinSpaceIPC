@@ -52,7 +52,6 @@
             this.textBoxMass = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pictureBoxCountryFlag = new System.Windows.Forms.PictureBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +63,7 @@
             this.eNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fRENCHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gERMANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxCountryFlag = new System.Windows.Forms.PictureBox();
             this.groupBoxStarVelocity.SuspendLayout();
             this.groupBoxStarDistance.SuspendLayout();
             this.groupBoxTemp.SuspendLayout();
@@ -219,12 +219,6 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             // 
-            // pictureBoxCountryFlag
-            // 
-            resources.ApplyResources(this.pictureBoxCountryFlag, "pictureBoxCountryFlag");
-            this.pictureBoxCountryFlag.Name = "pictureBoxCountryFlag";
-            this.pictureBoxCountryFlag.TabStop = false;
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -307,6 +301,12 @@
             resources.ApplyResources(this.gERMANToolStripMenuItem, "gERMANToolStripMenuItem");
             this.gERMANToolStripMenuItem.Click += new System.EventHandler(this.gERMANToolStripMenuItem_Click);
             // 
+            // pictureBoxCountryFlag
+            // 
+            resources.ApplyResources(this.pictureBoxCountryFlag, "pictureBoxCountryFlag");
+            this.pictureBoxCountryFlag.Name = "pictureBoxCountryFlag";
+            this.pictureBoxCountryFlag.TabStop = false;
+            // 
             // MalinSpaceIPC
             // 
             resources.ApplyResources(this, "$this");
@@ -320,8 +320,6 @@
             this.Controls.Add(this.listViewCalculations);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MalinSpaceIPC";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MalinSpaceIPC_FormClosing);
-            this.Load += new System.EventHandler(this.MalinSpaceIPC_Load);
             this.groupBoxStarVelocity.ResumeLayout(false);
             this.groupBoxStarVelocity.PerformLayout();
             this.groupBoxStarDistance.ResumeLayout(false);

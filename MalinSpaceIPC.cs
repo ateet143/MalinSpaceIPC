@@ -1,18 +1,16 @@
-﻿using MalinSpaceIPC.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography;
 using System.ServiceModel;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+///Created by Atit Singh
+///Date: 16/09/2022
+///This is a Single Client windows Application that will connect to the server program using 
+///Named pipes from the IPC.The client interface will provide the user with input text boxes for each astronomical calculation and 
+///read only output text boxes for the returned values.User can able to change the language to German, France and English(UK)
+///The user can able to change the theme as well as customise the background and foreground colours.
 
 namespace MalinSpaceIPC
 {
@@ -48,7 +46,7 @@ namespace MalinSpaceIPC
                             double ob = Double.Parse(textBoxObserve.Text);
                             double rt = Double.Parse(textBoxRest.Text);
                             double result = pipeProxy.starVelocity(ob, rt);
-                            display[0] = result.ToString();
+                            display[0] = result.ToString() + " m/s";
                         }
                         //if connection is not connected then executes this block
                         catch (EndpointNotFoundException)
@@ -63,7 +61,7 @@ namespace MalinSpaceIPC
                         {
                             double arc = Double.Parse(textBoxArc.Text);
                             double result = pipeProxy.starDistance(arc);
-                            display[1] = result.ToString();
+                            display[1] = result.ToString() + " parsec";
                         }
                         catch (EndpointNotFoundException)
                         {
@@ -78,7 +76,7 @@ namespace MalinSpaceIPC
                         {
                             double temp = Double.Parse(textBoxCelcius.Text);
                             double result = pipeProxy.celciusToKelvin(temp);
-                            display[2] = result.ToString();
+                            display[2] = result.ToString() + " K";
                         }
                         catch (EndpointNotFoundException)
                         {
@@ -93,7 +91,7 @@ namespace MalinSpaceIPC
                             double mass = Double.Parse(textBoxMass.Text);
                             double eventHorizonResult = pipeProxy.eventHorizon(mass * Math.Pow(10, (double)numericUpDownPower.Value));
                             string result = String.Format(CultureInfo.InvariantCulture, "{0:0.#E+0}", eventHorizonResult);
-                            display[3] = result;
+                            display[3] = result + " metres";
                         }
                         catch (EndpointNotFoundException)
                         {
@@ -225,9 +223,7 @@ namespace MalinSpaceIPC
 
             foreach (var listView in Controls.OfType<ListView>())
             {
-                listView.ForeColor = foreColor;
-                listView.Columns[0].ListView.ForeColor = foreColor;
-                //listViewCalculations.Columns[0].Text
+                listView.BackColor = ControlPaint.Light(backColor, 50.0f);
             }
         }
 
@@ -303,11 +299,10 @@ namespace MalinSpaceIPC
                     break;
                 case "French":
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
-                    // this.BackgroundImage = Properties.Resources.Flag_of_France;
                     break;
                 case "German":
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
-                    //  this.BackgroundImage = Properties.Resources.Flag_of_Spain;
+                
                     break;
             }
             //Clear the previous Controls object configuration
@@ -318,15 +313,6 @@ namespace MalinSpaceIPC
             Properties.Settings.Default.Save();
         }
 
-        private void MalinSpaceIPC_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-           
-        }
-
-        private void MalinSpaceIPC_Load(object sender, EventArgs e)
-        {
-           
-        }
+      
     }
 }
