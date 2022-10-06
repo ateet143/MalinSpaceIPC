@@ -310,7 +310,6 @@ namespace MalinSpaceIPC
             
             //re-Initialize every component according the language choosen.
             InitializeComponent();
-            Properties.Settings.Default.Save();
         }
 
       
